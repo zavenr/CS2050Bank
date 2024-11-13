@@ -1,12 +1,14 @@
 //Zaven Ranum
 //CS2050
 
-public abstract class ACCOUNT {
+import java.io.Serializable;
+
+public abstract class Account implements Serializable {
     private String accountName;
     private String accountID;
     private double balance;
     
-    public ACCOUNT(String accountName, double balance, String accountID) {
+    public Account(String accountName, double balance, String accountID) {
         this.accountName = accountName;
         this.balance = balance;
         this.accountID = accountID;
@@ -31,6 +33,11 @@ public abstract class ACCOUNT {
     }
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    @Override
+     public String toString() {
+    return "Account Name: " + accountName + ", Account ID: " + accountID + ", Balance: " + balance;
     }
     
 }
